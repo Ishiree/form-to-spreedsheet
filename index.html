@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -48,23 +48,23 @@
             </div>
           </nav>
 
-          <div class="row">
+          <div class="row justify-content-center">
               <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
                         <form name="submit-to-google-sheet">
                             <div class="form-group">
                               <label for="email">Email address</label>
-                              <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+                              <input name="email" type="text" class="form-control" id="email" aria-describedby="emailHelp">
                               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                               <label for="name">Name</label>
-                              <input type="text" class="form-control" id="name">
+                              <input name="name" type="text" class="form-control" id="name">
                             </div>
                             <div class="form-group">
                               <label for="region">region</label>
-                              <input type="text" class="form-control" id="region">
+                              <input name="region" type="text" class="form-control" id="region">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
