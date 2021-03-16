@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     
+    <script src="all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
@@ -64,16 +65,16 @@
                         <form name="submit-to-google-sheet" id="submit-to-google-sheet">
                             <div class="form-group">
                               <label for="email">Email address</label>
-                              <input name="email" type="email" class="form-control" id="email" require autofocus aria-describedby="emailHelp">
+                              <input name="email" type="email" class="form-control" id="email" required autofocus aria-describedby="emailHelp">
                               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                               <label for="name">Name</label>
-                              <input name="name" type="text" class="form-control" id="name" require autofocus minlength="3">
+                              <input name="name" type="text" class="form-control" id="name" required autofocus minlength="3">
                             </div>
                             <div class="form-group">
                               <label for="region">region</label>
-                              <input name="region" type="text" class="form-control" id="region" require autofocus minlength="3">
+                              <input name="region" type="text" class="form-control" id="region" required autofocus minlength="3">
                             </div>
                             <button id="submit-to-google-sheet" type="submit" class="btn btn-primary btn-send">Submit</button>
                             
@@ -87,6 +88,8 @@
               </div>
           </div>
       </div>
+
+      
     <!-- <script>
         $(document).ready(function() {
             $("#submit-to-google-sheet").validate({
@@ -147,7 +150,7 @@ $('#submit-to-google-sheet').submit(function(e){
 
         form.addEventListener('submit', e => {
           e.preventDefault()
-
+          
           btnLoading.classList.toggle('d-none');
           btnSend.classList.toggle('d-none');
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -155,28 +158,20 @@ $('#submit-to-google-sheet').submit(function(e){
               btnLoading.classList.toggle('d-none');
               btnSend.classList.toggle('d-none');
               
-              $.confirm({
+              $.alert({
                 title: 'Berhasil!',
-                content: 'Data Telah Disimpan',
+                content:  'klik linknya ^^' + 
+                          '<a href="https://griyayatim.com" class="text-center">https://griyayatim.com</a>',
                 theme: 'modern',
                 type: 'success',
+                icon: 'fas fa-check',
+                columnClass: 'col-md-8 col-md-offset-2',
                 closeIcon: true,
                 draggable: true,
                 buttons: {
                     confirm: function () {
-                        $.alert('Confirmed!');
+                      
                     },
-                    cancel: function () {
-                        $.alert('Canceled!');
-                    },
-                    somethingElse: {
-                        text: 'Something else',
-                        btnClass: 'btn-blue',
-                        keys: ['enter', 'shift'],
-                        action: function(){
-                            $.alert('Something else?');
-                        }
-                    }
                 }
               });
 
